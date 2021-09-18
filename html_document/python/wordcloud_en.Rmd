@@ -1,0 +1,25 @@
+---
+title: Creating a Word Cloud of the Sherlock Holmes Canon
+author: Péter Jeszenszky
+date: September 18, 2021
+output: html_document
+lang: en
+---
+
+Let's create a word cloud of the complete Sherlock Holmes Canon that is available in plain text from [here](https://sherlock-holm.es/stories/plain-text/cano.txt).
+
+The word cloud can be generated with the [word_cloud](https://github.com/amueller/word_cloud) package as follows:
+
+```{python}
+from wordcloud import WordCloud
+import urllib.request
+
+text = urllib.request.urlopen('https://sherlock-holm.es/stories/plain-text/cano.txt').read().decode('utf-8')
+
+wordcloud = WordCloud(margin=0).generate(text)
+
+import matplotlib.pyplot as plt
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+```

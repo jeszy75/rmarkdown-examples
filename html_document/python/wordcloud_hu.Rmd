@@ -1,0 +1,25 @@
+---
+title: Szófelhő létrehozása a Sherlock Holmes kánonhoz
+author: Jeszenszky Péter
+date: 2021. szeptember 18.
+output: html_document
+lang: hu
+---
+
+Készítsünk egy szófelhőt a teljes Sherlock Holmes kánonhoz, mely sima szövegként [itt](https://sherlock-holm.es/stories/plain-text/cano.txt) érhető el.
+
+A szófelhő az alábbi módon állítható elő a [word_cloud](https://github.com/amueller/word_cloud) csomaggal:
+
+```{python}
+from wordcloud import WordCloud
+import urllib.request
+
+text = urllib.request.urlopen('https://sherlock-holm.es/stories/plain-text/cano.txt').read().decode('utf-8')
+
+wordcloud = WordCloud(margin=0).generate(text)
+
+import matplotlib.pyplot as plt
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+```

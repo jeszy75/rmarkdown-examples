@@ -1,0 +1,59 @@
+---
+title: Real Time Earthquake Data
+author: Péter Jeszenszky
+date: September 18, 2021
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+    df_print: paged
+    code_folding: hide
+lang: en
+---
+
+# Data Source
+
+The [U.S. Geological Survey](https://www.usgs.gov/) publishes real time earthquake data on the website of the [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/). The data is available [here](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php) in CSV format.
+
+# Reading Data
+
+Let's read the CSV file from [here](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.csv) that contains data about all M4.5+ earthquakes of the past 7 days:
+```{r}
+library(readr)
+earthquakes <- read_csv("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.csv",
+  col_types = list(nst = col_integer())
+)
+```
+
+Let's examine the structure of the dataset:
+```{r}
+str(earthquakes)
+```
+
+The dataset contains a total number of `r nrow(earthquakes)` rows:
+```{r}
+earthquakes
+```
+
+# Visualization
+
+Let's visualize the earthquakes on a map such that the color of an earthquake should show the magnitude:
+```{r}
+library(ggplot2)
+library(ggspatial)
+ggplot(earthquakes, aes(longitude, latitude, color = mag)) +
+  annotation_map_tile() +
+  geom_spatial_point()
+```
+
+Histogram of the depth of the earthquakes:
+```{r}
+ggplot(earthquakes, aes(x = depth)) +
+  geom_histogram(fill = "coral") +
+  labs(
+    title = "M4.5+ earthquakes of the past 7 days by depth",
+    subtitle = "Source: USGS Earthquake Hazards Program"
+  )
+```
+

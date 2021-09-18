@@ -1,0 +1,5 @@
+*.docx
+*.epub
+*.html
+*.pdf
+rosm.cache/

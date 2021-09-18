@@ -1,0 +1,61 @@
+---
+title: Valós idejű földrengés adatok
+author: Jeszenszky Péter
+date: 2021. szeptember 18.
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+    df_print: paged
+    code_folding: hide
+lang: hu
+---
+
+# Az adatok forrása
+
+Az [Egyesült Államok Földtani Szolgálata (U.S. Geological Survey)](https://www.usgs.gov/) a [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/) webhely részeként tesz közzé valós idejű földrengés adatokat, melyek [itt](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php) érhetők el CSV formátumban.
+
+# Adatok beolvasása
+
+Olvassuk be az utóbbi 7 nap legalább 4,5 magnitúdójú földrengéseiről adatokat tartalmazó CSV állományt [innen](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.csv):
+```{r}
+library(readr)
+earthquakes <- read_csv("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.csv",
+  col_types = list(nst = col_integer())
+)
+```
+
+Vizsgáljuk meg a beolvasott adatok szerkezetét:
+```{r}
+str(earthquakes)
+```
+
+Az adatállomány összesen `r nrow(earthquakes)` sort tartalmaz:
+```{r}
+earthquakes
+```
+
+# Vizualizáció
+
+Jelenítsük meg térképen a földrengéseket, úgy, hogy a szín jelölje a magnitúdót:
+```{r}
+library(ggplot2)
+library(ggspatial)
+ggplot(earthquakes, aes(longitude, latitude, color = mag)) +
+  annotation_map_tile() +
+  geom_spatial_point()
+```
+
+A földrengések mélységének hisztogramja:
+```{r}
+ggplot(earthquakes, aes(x = depth)) +
+  geom_histogram(fill = "coral") +
+  labs(
+    x = "Mélység",
+    y = "Szám",
+    title = "Az utóbbi egy hét legalább 4,5 magnitúdójú földrengései mélység szerint",
+    subtitle = "Forrás: USGS Earthquake Hazards Program"
+  )
+```
+
