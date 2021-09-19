@@ -5,6 +5,7 @@ R packages required for creating the output document:
 
 * [DBI](https://cran.r-project.org/web/packages/DBI/)
 * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/)
+* [RSQLite](https://cran.r-project.org/web/packages/RSQLite/)
 
 Python packages required for creating the output document:
 
