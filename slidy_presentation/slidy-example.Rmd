@@ -45,7 +45,7 @@ This is a link: [R Markdown](https://rmarkdown.rstudio.com/)
 * Nulla tincidunt sagittis dignissim.
   * Curabitur pretium ultrices elementum.
   * Cras elementum a dui in blandit.
-* Quisque neque justo, pellentesque vitae commodo non, eleifend sit amet sem. 
+* Quisque neque justo, pellentesque vitae commodo non, eleifend sit amet sem.
 
 ## Numbered Lists
 
@@ -53,7 +53,7 @@ This is a link: [R Markdown](https://rmarkdown.rstudio.com/)
 1. Donec id ipsum risus.
     1. Curabitur convallis velit et lorem ultricies, id finibus nunc cursus.
     1. Fusce commodo lectus in sollicitudin ornare.
-        1. Maecenas luctus tincidunt consectetur. 
+        1. Maecenas luctus tincidunt consectetur.
     1. Phasellus ac orci eu lectus facilisis semper non ullamcorper velit.
 1. Sed in sapien nisl.
 
