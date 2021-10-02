@@ -137,3 +137,19 @@ y = np.sin(np.pi * x) / (np.pi * x)
 plt.plot(x, y)
 plt.show()
 ```
+
+## Using Groovy
+
+A "Hello, World!" program in Java:
+```{groovy}
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+In Groovy, it can also be written as:
+```{groovy}
+println "Hello, World!"
+```
