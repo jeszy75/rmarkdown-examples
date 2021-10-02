@@ -8,7 +8,7 @@ Building the examples requires the following software to be installed:
 * [GNU Bash](https://www.gnu.org/software/bash/)
 * [GNU Make](https://www.gnu.org/software/make/)
 * [Pandoc](https://pandoc.org/)
-* [Pyhton](https://www.python.org/)
+* [Python](https://www.python.org/)
 * [R](https://cran.r-project.org/)
 * R packages:
     * [rmarkdown](https://cran.r-project.org/web/packages/rmarkdown/)
