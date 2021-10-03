@@ -23,6 +23,8 @@ ___Emphasis___ and ***strong emphasis*** can be nested as shown here.
 
 The word `monospace` is shown in monospace.
 
+## Code Blocks
+
 This is a code block:
 ```
        _,    _   _    ,_
@@ -36,6 +38,8 @@ YJGS8P"Y888P"Y888P"Y888P"Y8888P
   '8o          V          o8'
     `                     `
 ```
+
+## Links
 
 This is an autolink: <https://rmarkdown.rstudio.com/>
 
