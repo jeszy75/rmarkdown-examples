@@ -12,7 +12,7 @@ output:
     citation_package: default
 lang: en-US
 urlcolor: blue
-bibliography: references.bib
+bibliography: ../references.bib
 link-citations: true
 ---
 
