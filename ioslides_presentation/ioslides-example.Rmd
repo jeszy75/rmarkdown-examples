@@ -67,6 +67,20 @@ This is a citation: [@rmarkdown:tdg]
     1. Phasellus ac orci eu lectus facilisis semper non ullamcorper velit.
 1. Sed in sapien nisl.
 
+## Definition Lists
+
+Aliquam vitae
+
+:   Integer pharetra, ipsum pellentesque ultricies aliquam, ligula tellus finibus purus, eu luctus magna lacus quis est. Donec vestibulum ornare arcu, et gravida augue tempus et.
+
+Curabitur elementum
+
+:   Duis in pharetra augue, et sollicitudin libero. Quisque et rhoncus magna. Nullam at sapien nisi. Aliquam bibendum urna et eleifend scelerisque.
+
+Donec fermentum
+
+:   Aenean malesuada lacus ut ultricies tincidunt. Nullam ante augue, tristique nec libero semper, aliquam dignissim magna.
+
 ## Math
 
 [MathJax](https://www.mathjax.org/) let you to use LaTeX math:
