@@ -10,7 +10,6 @@ output:
     incremental: true
     df_print: kable
     citation_package: default
-    md_extensions: +definition_lists
 lang: en-US
 urlcolor: blue
 bibliography: ../references.bib
