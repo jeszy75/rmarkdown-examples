@@ -11,12 +11,14 @@ Készítsünk egy szófelhőt a teljes Sherlock Holmes kánonhoz, mely sima szö
 A szófelhő az alábbi módon állítható elő a [word_cloud](https://github.com/amueller/word_cloud) csomaggal:
 
 ```{python}
-from wordcloud import WordCloud
+from wordcloud import WordCloud, STOPWORDS
 import urllib.request
 
 text = urllib.request.urlopen('https://sherlock-holm.es/stories/plain-text/cano.txt').read().decode('utf-8')
 
-wordcloud = WordCloud(margin=0).generate(text)
+stopwords = set(STOPWORDS)
+
+wordcloud = WordCloud(stopwords=stopwords, collocations=False, margin=0).generate(text)
 
 import matplotlib.pyplot as plt
 plt.imshow(wordcloud, interpolation='bilinear')
